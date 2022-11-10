@@ -1,1 +1,58 @@
 @import url('reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  /* colors */
+  --cl-white: hsl(0, 0%, 95%);
+  --cl-darkblue: hsl(215, 72%, 8%);
+  --cl-darkblue-100: hsl(221, 21%, 24%);
+  --cl-pinky: hsl(338, 94%, 65%);
+  --cl-bluu: hsl(192, 64%, 57%);
+  /* sizes */
+  --xsmall: 0.5rem;
+  --small: 0.85rem;
+  --regular: 1rem;
+  --large: 1.5rem;
+  --xlarge: 2rem;
+  /* fonts */
+  --poppins: 'Poppins', sans-serif;
+  /* font weights */
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+}
+
+body {
+  background: var(--cl-darkblue);
+  font-family: var(--poppins);
+  color: var(--cl-white);
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+aside {
+  flex-basis: 50rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--xlarge);
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  gap: var(--xsmall);
+  color: var(--cl-bluu);
+}
+
+#logo img {
+  width: 50px;
+}
+
+#map {
+  background: var(--cl-white);
+  height: 100vh;
+  width: 100%;
+}
