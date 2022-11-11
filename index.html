@@ -4,20 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Mapty App</title>
-
+    <!-- style -->
     <link rel="stylesheet" href="style/style.css" />
+    <!-- leaflet.js -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+      crossorigin=""
+    ></script>
     <script defer src="app/app.js"></script>
   </head>
   <body>
     <aside class="flex flex-column align-items-center justify-between gap-xl">
       <div id="logo" class="flex align-items-center gap-xs">
         <img src="assets/logo.svg" alt="Logo" width="40px" />
-        <h1>mapty</h1>
+        <h1>mapty<span>.</span>app</h1>
       </div>
       <ul class="workouts flex flex-column gap-xl" role="list">
-        <form class="form card">
+        <form class="form card none">
           <div
             class="form__row flex flex-row gap-s align-items-center justify-between"
           >
