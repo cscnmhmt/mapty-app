@@ -4,16 +4,21 @@
 :root {
   /* colors */
   --cl-white: hsl(0, 0%, 95%);
-  --cl-darkblue: hsl(215, 72%, 8%);
-  --cl-darkblue-100: hsl(221, 21%, 24%);
+  --cl-darkblue: hsl(222, 45%, 11%);
+  --cl-darkblue-100: hsl(221, 34%, 18%);
+  --cl-darkblue-300: hsl(222, 18%, 47%);
+  --cl-darkblue-500: hsl(222, 13%, 65%);
   --cl-pinky: hsl(338, 94%, 65%);
   --cl-bluu: hsl(192, 64%, 57%);
   /* sizes */
+  --2xsmall: 0.3rem;
   --xsmall: 0.5rem;
   --small: 0.85rem;
   --regular: 1rem;
+  --medium: 1.2rem;
   --large: 1.5rem;
   --xlarge: 2rem;
+  --2xlarge: 3rem;
   /* fonts */
   --poppins: 'Poppins', sans-serif;
   /* font weights */
@@ -21,6 +26,54 @@
   --fw-500: 500;
   --fw-600: 600;
   --fw-700: 700;
+}
+
+/* utility classes */
+
+.flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+.align-items-center {
+  align-items: center;
+}
+.align-items-baseline {
+  align-items: baseline;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.gap-xs {
+  gap: var(--xsmall);
+}
+.gap-s {
+  gap: var(--small);
+}
+.gap-r {
+  gap: var(--regular);
+}
+.gap-l {
+  gap: var(--large);
+}
+.gap-xl {
+  gap: var(--xlarge);
+}
+.none {
+  display: none;
+}
+.card {
+  padding: var(--small) var(--large);
+  background-color: var(--cl-darkblue-100);
+  border-radius: var(--xsmall);
+  height: 130px;
 }
 
 body {
@@ -34,21 +87,84 @@ body {
 
 aside {
   flex-basis: 50rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: var(--xlarge);
+  padding: var(--xlarge) var(--medium);
 }
 
 #logo {
-  display: flex;
-  align-items: center;
-  gap: var(--xsmall);
   color: var(--cl-bluu);
 }
 
-#logo img {
-  width: 50px;
+.workouts {
+  height: 75vh;
+  overflow: auto;
+  padding: 0 var(--2xlarge);
+}
+
+/* FORM */
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1rem;
+}
+
+.form__row--hidden {
+  display: none;
+}
+
+.form__label {
+  flex: 0 0 40%;
+  font-size: var(--regular);
+}
+
+.form__input {
+  width: 100%;
+  font-size: var(--small);
+  background-color: var(--cl-darkblue-300);
+  border: 1px solid var(--cl-darkblue-300);
+  color: var(--cl-white);
+  padding: var(--2xsmall) var(--small);
+  border-radius: 4px;
+  outline: none;
+  transition: 0.1s;
+}
+
+.form__input:focus {
+  background-color: var(--cl-darkblue-100);
+  border: 1px solid var(--cl-darkblue-300);
+}
+
+.form__input::placeholder {
+  color: var(--cl-darkblue-500);
+  font-size: var(--small);
+}
+
+/* WORKOUT ITEM */
+
+.workout--cycling {
+  border-left: var(--small) solid var(--cl-pinky);
+}
+.workout--running {
+  border-left: var(--small) solid var(--cl-bluu);
+}
+
+.workout__title,
+.workout__detail--item-icon,
+.workout__detail--item-value {
+  font-size: var(--medium);
+  font-weight: var(--fw-500);
+}
+
+.workout__detail--item-unit {
+  text-transform: uppercase;
+  font-size: var(--small);
+  color: var(--cl-darkblue-500);
+}
+
+.copyright {
+  font-size: var(--small);
+  font-weight: var(--fw-400);
+  color: var(--cl-darkblue-500);
 }
 
 #map {

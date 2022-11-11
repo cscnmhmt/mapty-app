@@ -11,11 +11,113 @@
     <script defer src="app/app.js"></script>
   </head>
   <body>
-    <aside>
-      <div id="logo">
-        <img src="assets/logo.svg" alt="Logo" />
-        <h1>Mapty</h1>
+    <aside class="flex flex-column align-items-center justify-between gap-xl">
+      <div id="logo" class="flex align-items-center gap-xs">
+        <img src="assets/logo.svg" alt="Logo" width="40px" />
+        <h1>mapty</h1>
       </div>
+      <ul class="workouts flex flex-column gap-xl" role="list">
+        <form class="form card">
+          <div
+            class="form__row flex flex-row gap-s align-items-center justify-between"
+          >
+            <label class="form__label">Type</label>
+            <select class="form__input form__input--type">
+              <option value="running">Running</option>
+              <option value="cycling">Cycling</option>
+            </select>
+          </div>
+          <div
+            class="form__row flex flex-row gap-s align-items-center justify-between"
+          >
+            <label class="form__label">Distance</label>
+            <input class="form__input form__input--distance" placeholder="km" />
+          </div>
+          <div
+            class="form__row flex flex-row gap-s align-items-center justify-between"
+          >
+            <label class="form__label">Duration</label>
+            <input
+              class="form__input form__input--duration"
+              placeholder="min"
+            />
+          </div>
+          <div
+            class="form__row flex flex-row gap-s align-items-center justify-between"
+          >
+            <label class="form__label">Cadence</label>
+            <input
+              class="form__input form__input--cadence"
+              placeholder="step/min"
+            />
+          </div>
+          <div
+            class="form__row form__row--hidden flex flex-row gap-s align-items-center justify-between"
+          >
+            <label class="form__label">Elev Gain</label>
+            <input
+              class="form__input form__input--elevation"
+              placeholder="meters"
+            />
+          </div>
+          <button class="form__btn none">OK</button>
+        </form>
+        <li
+          class="workout workout--cycling card flex flex-column gap-l justify-center"
+        >
+          <h2 class="workout__title">Cycling on November 10</h2>
+          <div class="workout__detail flex gap-l justify-between">
+            <div class="workout__detail--item flex gap-xs align-items-baseline">
+              <span class="workout__detail--item-icon">🚴‍♀️</span>
+              <span class="workout__detail--item-value">123</span>
+              <span class="workout__detail--item-unit">km</span>
+            </div>
+            <div class="workout__detail--item flex gap-xs align-items-baseline">
+              <span class="workout__detail--item-icon">⏱</span>
+              <span class="workout__detail--item-value">124</span>
+              <span class="workout__detail--item-unit">min</span>
+            </div>
+            <div class="workout__detail--item flex gap-xs align-items-baseline">
+              <span class="workout__detail--item-icon">⚡️</span>
+              <span class="workout__detail--item-value">1.0</span>
+              <span class="workout__detail--item-unit">min/km</span>
+            </div>
+            <div class="workout__detail--item flex gap-xs align-items-baseline">
+              <span class="workout__detail--item-icon">⛰</span>
+              <span class="workout__detail--item-value">152</span>
+              <span class="workout__detail--item-unit">m</span>
+            </div>
+          </div>
+        </li>
+        <li
+          class="workout workout--running card flex flex-column gap-l justify-center"
+        >
+          <h2 class="workout__title">Running on November 10</h2>
+          <div class="workout__detail flex gap-l justify-between">
+            <div class="workout__detail--item flex gap-xs align-items-baseline">
+              <span class="workout__detail--item-icon">🏃‍♂️</span>
+              <span class="workout__detail--item-value">123</span>
+              <span class="workout__detail--item-unit">km</span>
+            </div>
+            <div class="workout__detail--item flex gap-xs align-items-baseline">
+              <span class="workout__detail--item-icon">⏱</span>
+              <span class="workout__detail--item-value">124</span>
+              <span class="workout__detail--item-unit">min</span>
+            </div>
+            <div class="workout__detail--item flex gap-xs align-items-baseline">
+              <span class="workout__detail--item-icon">⚡️</span>
+              <span class="workout__detail--item-value">1.0</span>
+              <span class="workout__detail--item-unit">min/km</span>
+            </div>
+            <div class="workout__detail--item flex gap-xs align-items-baseline">
+              <span class="workout__detail--item-icon">⛰</span>
+              <span class="workout__detail--item-value">152</span>
+              <span class="workout__detail--item-unit">m</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <p class="copyright">© Copyright by Jonas Schmedtmann</p>
     </aside>
     <div id="map"></div>
   </body>
