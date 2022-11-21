@@ -6,8 +6,49 @@ const containerWorkouts = document.querySelector('.workouts');
 const inputType = document.querySelector('.form__input--type');
 const inputDistance = document.querySelector('.form__input--distance');
 const inputDuration = document.querySelector('.form__input--duration');
-const inputCadence = document.querySelector('.form__input--candence');
+const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
+
+//// Creating Workout ////
+class Workout {
+  constructor(distance, duration, coords) {
+    this.distance = distance; // in km
+    this.duration = duration; // in min
+    this.coords = coords; // [lng, lat]
+  }
+}
+
+class Running extends Workout {
+  constructor(distance, duration, coords, cadence) {
+    super(distance, duration, coords);
+    this.cadence = cadence;
+    this.calcPace();
+  }
+
+  calcPace() {
+    // min/km
+    this.pace = this.duration / this.distance;
+    return this.pace;
+  }
+}
+
+class Cycling extends Workout {
+  constructor(distance, duration, coords, elevationGain) {
+    super(distance, duration, coords);
+    this.elevationGain = elevationGain;
+    this.calcSpeed();
+  }
+
+  calcSpeed() {
+    // km/h
+    this.speed = this.distance / (this.duration / 60);
+    return this.speed;
+  }
+}
+
+const run1 = new Running(5, 120, [39, 32], 50);
+const cycling1 = new Cycling(50, 600, [39, 32], 90);
+console.log(run1, cycling1);
 
 //// APP ////
 
@@ -17,6 +58,7 @@ class App {
   constructor() {
     this._getPosition();
     form.addEventListener('submit', this._newWorkout.bind(this));
+    inputType.addEventListener('change', this._toggelElevationField);
   }
 
   _getPosition() {
@@ -51,7 +93,10 @@ class App {
     inputDistance.focus();
   }
 
-  _toggelElevationField() {}
+  _toggelElevationField() {
+    inputElevation.closest('.form__row').classList.toggle('form__row--hidden');
+    inputCadence.closest('.form__row').classList.toggle('form__row--hidden');
+  }
 
   _newWorkout(e) {
     e.preventDefault();
