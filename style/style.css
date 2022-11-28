@@ -186,7 +186,7 @@ aside {
 }
 
 .leaflet-popup .leaflet-popup-content-wrapper {
-  background-color: var(--cl-darkblue);
+  background-color: var(--cl-darkblue-100);
   color: var(--cl-white);
   border-radius: var(--xsmall);
   padding-right: var(--2xsmall);
@@ -197,12 +197,12 @@ aside {
 }
 
 .leaflet-popup .leaflet-popup-tip {
-  background-color: var(--cl-darkblue);
+  background-color: var(--cl-darkblue-100);
 }
 
 .running-popup .leaflet-popup-content-wrapper {
-  border-left: var(--small) solid var(--cl-bluu);
+  border-left: var(--xsmall) solid var(--cl-bluu);
 }
 .cycling-popup .leaflet-popup-content-wrapper {
-  border-left: var(--small) solid var(--cl-pinky);
+  border-left: var(--xsmall) solid var(--cl-pinky);
 }
