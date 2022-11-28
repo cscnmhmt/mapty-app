@@ -184,3 +184,25 @@ aside {
   height: 100vh;
   width: 100%;
 }
+
+.leaflet-popup .leaflet-popup-content-wrapper {
+  background-color: var(--cl-darkblue);
+  color: var(--cl-white);
+  border-radius: var(--xsmall);
+  padding-right: var(--2xsmall);
+}
+
+.leaflet-popup .leaflet-popup-content {
+  font-size: var(--small);
+}
+
+.leaflet-popup .leaflet-popup-tip {
+  background-color: var(--cl-darkblue);
+}
+
+.running-popup .leaflet-popup-content-wrapper {
+  border-left: var(--small) solid var(--cl-bluu);
+}
+.cycling-popup .leaflet-popup-content-wrapper {
+  border-left: var(--small) solid var(--cl-pinky);
+}
