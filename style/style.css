@@ -73,6 +73,7 @@
   padding: var(--small) var(--large);
   background-color: var(--cl-darkblue-100);
   border-radius: var(--xsmall);
+  min-width: 500px;
   height: 8rem;
 }
 
@@ -121,7 +122,6 @@ aside {
 .form__row--hidden {
   display: none;
 }
-
 .form__label {
   flex: 0 0 40%;
   font-size: var(--regular);
