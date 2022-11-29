@@ -41,6 +41,6 @@
   padding: var(--small) var(--large);
   background-color: var(--cl-darkblue-100);
   border-radius: var(--xsmall);
-  min-width: 500px;
+  min-width: 545px;
   height: 8rem;
 }
